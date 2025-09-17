@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart India Hackathon - Team Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-name {
+            font-size: 3em;
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .idea-name {
+            font-size: 2em;
+            color: #667eea;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #4a5568;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .idea-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background: linear-gradient(145deg, #f7fafc, #edf2f7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #667eea;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .member-description {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .future-plans {
+            background: linear-gradient(145deg, #f0fff4, #e6fffa);
+        }
+
+        .future-plans ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .future-plans li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .future-plans li:before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .team-name {
+                font-size: 2.5em;
+            }
+            
+            .idea-name {
+                font-size: 1.5em;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="team-name">Team InnovateSIH</h1>
+            <h2 class="idea-name">Smart Healthcare Management System</h2>
+        </header>
+
+        <section class="section">
+            <h2>Project Demo</h2>
+            <div class="video-container">
+                <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        title="Smart India Hackathon Project Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Innovation</h2>
+            <div class="idea-content">
+                <p>
+                    Our Smart Healthcare Management System revolutionizes patient care by integrating IoT devices, 
+                    artificial intelligence, and blockchain technology. The system provides real-time health monitoring, 
+                    predictive analytics for early disease detection, and secure patient data management.
+                </p>
+                <br>
+                <p>
+                    <strong>Key Features:</strong>
+                </p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>• Real-time vital signs monitoring using IoT sensors</li>
+                    <li>• AI-powered disease prediction and risk assessment</li>
+                    <li>• Blockchain-secured patient records for privacy and interoperability</li>
+                    <li>• Telemedicine integration for remote consultations</li>
+                    <li>• Emergency alert system with automated ambulance dispatch</li>
+                    <li>• Medication adherence tracking and reminders</li>
+                </ul>
+                <br>
+                <p>
+                    This solution addresses critical healthcare challenges in India, including doctor shortage in rural areas, 
+                    delayed emergency response, and fragmented medical records. By leveraging cutting-edge technology, 
+                    we aim to make quality healthcare accessible to every citizen.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-name">Priya Sharma</div>
+                    <div class="member-role">Team Leader & Full-Stack Developer</div>
+                    <div class="member-description">
+                        Specializes in web development and system architecture. 
+                        Passionate about creating scalable healthcare solutions.
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-name">Arjun Patel</div>
+                    <div class="member-role">AI/ML Engineer</div>
+                    <div class="member-description">
+                        Expert in machine learning algorithms and predictive analytics. 
+                        Focused on developing intelligent health monitoring systems.
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-name">Sneha Gupta</div>
+                    <div class="member-role">IoT & Hardware Specialist</div>
+                    <div class="member-description">
+                        Skilled in IoT device integration and sensor networks. 
+                        Ensures seamless hardware-software connectivity.
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-name">Rohit Kumar</div>
+                    <div class="member-role">Blockchain Developer</div>
+                    <div class="member-description">
+                        Blockchain technology expert ensuring data security and privacy. 
+                        Implements decentralized healthcare record systems.
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-name">Kavya Nair</div>
+                    <div class="member-role">UI/UX Designer</div>
+                    <div class="member-description">
+                        Creates intuitive and accessible user interfaces. 
+                        Focuses on user-centered design for healthcare applications.
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-name">Vikash Singh</div>
+                    <div class="member-role">Data Scientist</div>
+                    <div class="member-description">
+                        Analyzes healthcare data patterns and trends. 
+                        Develops insights for improving patient outcomes.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section future-plans">
+            <h2>Future Roadmap</h2>
+            <ul>
+                <li>Phase 1: Pilot testing in select hospitals and clinics</li>
+                <li>Phase 2: Integration with government healthcare databases</li>
+                <li>Phase 3: Expansion to rural healthcare centers</li>
+                <li>Phase 4: International market penetration</li>
+                <li>Phase 5: Advanced AI features and personalized medicine</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Team InnovateSIH - Smart India Hackathon</p>
+            <p>Building the future of healthcare technology</p>
+        </footer>
+    </div>
+</body>
+</html>
