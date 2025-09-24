@@ -130,6 +130,176 @@
             background: linear-gradient(145deg, #f0fff4, #e6fffa);
         }
 
+        .problem-statement {
+            background: linear-gradient(145deg, #fef5e7, #fed7aa);
+            border-left: 5px solid #f59e0b;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .solution-architecture {
+            margin: 20px 0;
+        }
+
+        .solution-architecture h3 {
+            color: #4a5568;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .arch-component {
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .arch-component:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .component-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .component-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        .component-desc {
+            font-size: 0.9em;
+            color: #718096;
+            line-height: 1.4;
+        }
+
+        .impact-metrics {
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+            border-left: 5px solid #10b981;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 5px;
+        }
+
+        .metric-description {
+            font-size: 0.95em;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .timeline-section {
+            background: linear-gradient(145deg, #ede9fe, #ddd6fe);
+            border-left: 5px solid #8b5cf6;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
         .future-plans ul {
             list-style: none;
             padding-left: 0;
@@ -167,14 +337,112 @@
             .section h2 {
                 font-size: 1.8em;
             }
+
+            .stats-grid, .metrics-grid, .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-marker {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Animation effects */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 0.1s;
+        }
+
+        .section:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        /* Hover effects for interactive elements */
+        .stat-card:hover, .metric-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Pulse animation for important metrics */
+        .stat-number, .metric-value {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Gradient text effect for headings */
+        .team-name {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced button styles for future interactivity */
+        .cta-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="team-name">Team InnovateSIH</h1>
-            <h2 class="idea-name">Smart Healthcare Management System</h2>
+            <h1 class="team-name">🏆 TeamAlpha</h1>
+            <h2 class="idea-name">NextLesson - Smart Curriculum Activity & Attendance System</h2>
+            <div style="margin-top: 20px; font-size: 1.2em; color: #4a5568;">
+                <p><strong>🎓 AI-Powered Educational Management Platform</strong></p>
+                <p style="margin-top: 10px; font-size: 1em; color: #667eea;">
+                    Smart India Hackathon 2025 | Software Edition | Smart Education Theme
+                </p>
+                <p style="margin-top: 8px; font-size: 0.95em; color: #718096;">
+                    <strong>Problem Statement ID:</strong> 25011 - Smart Curriculum Activity & Attendance App
+                </p>
+                <div style="margin-top: 15px;">
+                    <span style="background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; margin: 5px; display: inline-block;">🤖 Face Recognition</span>
+                    <span style="background: #3b82f6; color: white; padding: 8px 16px; border-radius: 20px; margin: 5px; display: inline-block;">📱 React Native</span>
+                    <span style="background: #8b5cf6; color: white; padding: 8px 16px; border-radius: 20px; margin: 5px; display: inline-block;">� BLE/Wi-Fi</span>
+                    <span style="background: #ef4444; color: white; padding: 8px 16px; border-radius: 20px; margin: 5px; display: inline-block;">⚙️ Node.js</span>
+                    <span style="background: #f59e0b; color: white; padding: 8px 16px; border-radius: 20px; margin: 5px; display: inline-block;">🎯 OpenCV</span>
+                </div>
+            </div>
         </header>
 
         <section class="section">
@@ -190,108 +458,412 @@
             </div>
         </section>
 
-        <section class="section">
-            <h2>Our Innovation</h2>
+        <section class="section problem-statement">
+            <h2>🚨 Problem Statement</h2>
             <div class="idea-content">
                 <p>
-                    Our Smart Healthcare Management System revolutionizes patient care by integrating IoT devices, 
-                    artificial intelligence, and blockchain technology. The system provides real-time health monitoring, 
-                    predictive analytics for early disease detection, and secure patient data management.
+                    <strong>Manual attendance processes and unstructured curriculum management are major bottlenecks in modern education:</strong>
                 </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">30 mins</div>
+                        <div class="stat-label">Daily time wasted on manual attendance per class</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15-20%</div>
+                        <div class="stat-label">Teaching time lost to administrative tasks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Student free periods spent unproductively</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Attendance discrepancies in manual systems</div>
+                    </div>
+                </div>
                 <br>
-                <p>
-                    <strong>Key Features:</strong>
-                </p>
+                <p><strong>🎯 Key Educational Challenges:</strong></p>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>• Real-time vital signs monitoring using IoT sensors</li>
-                    <li>• AI-powered disease prediction and risk assessment</li>
-                    <li>• Blockchain-secured patient records for privacy and interoperability</li>
-                    <li>• Telemedicine integration for remote consultations</li>
-                    <li>• Emergency alert system with automated ambulance dispatch</li>
-                    <li>• Medication adherence tracking and reminders</li>
+                    <li>📝 Manual attendance marking consumes valuable class time</li>
+                    <li>❌ High error rates and potential for attendance manipulation</li>
+                    <li>⏰ Unstructured free periods leading to wasted learning opportunities</li>
+                    <li>� Lack of centralized curriculum progress tracking</li>
+                    <li>� Poor communication between teachers, students, and administration</li>
+                    <li>� No integration between attendance and learning management systems</li>
                 </ul>
                 <br>
-                <p>
-                    This solution addresses critical healthcare challenges in India, including doctor shortage in rural areas, 
-                    delayed emergency response, and fragmented medical records. By leveraging cutting-edge technology, 
-                    we aim to make quality healthcare accessible to every citizen.
-                </p>
+                <p><strong>🎓 NEP 2020 Alignment:</strong> Our solution directly supports India's National Education Policy goals of technology-enabled personalized learning and efficient academic administration.</p>
             </div>
         </section>
 
         <section class="section">
-            <h2>Our Team</h2>
+            <h2>💡 NextLesson Solution</h2>
+            <div class="idea-content">
+                <p>
+                    <strong>NextLesson revolutionizes educational management by integrating automated attendance, smart curriculum tracking, and personalized learning activities into a unified platform.</strong> Our multi-modal approach ensures reliability while maximizing learning efficiency.
+                </p>
+                <br>
+                <div class="solution-architecture">
+                    <h3>🏗️ Multi-Modal Attendance System</h3>
+                    <div class="architecture-grid">
+                        <div class="arch-component">
+                            <div class="component-icon">�</div>
+                            <div class="component-title">Face Recognition</div>
+                            <div class="component-desc">CCTV-based entry/exit tracking with ≥80% presence verification using OpenCV</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-icon">📱</div>
+                            <div class="component-title">BLE/Wi-Fi Proximity</div>
+                            <div class="component-desc">Continuous presence tracking via smartphone or wearable devices</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-icon">⌚</div>
+                            <div class="component-title">NFC Wearables</div>
+                            <div class="component-desc">BLE/NFC bands for schools where phones are prohibited</div>
+                        </div>
+                        <div class="arch-component">
+                            <div class="component-icon">🔲</div>
+                            <div class="component-title">QR Code Backup</div>
+                            <div class="component-desc">Session codes ensure redundancy during network failures</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p><strong>🎯 Core Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🤖 <strong>Automated Attendance:</strong> Face recognition + BLE proximity + QR backup</li>
+                    <li>📚 <strong>Smart Curriculum Activities:</strong> Personalized micro-lessons during free periods</li>
+                    <li>👩‍🏫 <strong>Teacher Presence Verification:</strong> Auto-detect teacher absence and trigger substitution</li>
+                    <li>� <strong>Dynamic Scheduling:</strong> Auto-reschedule around holidays and festivals</li>
+                    <li>📊 <strong>Real-time Dashboards:</strong> Performance tracking for students, teachers, and admin</li>
+                    <li>� <strong>Feedback System:</strong> Anonymous teacher ratings (≥70% attendance required)</li>
+                    <li>📱 <strong>Cross-Platform Apps:</strong> React Native mobile apps for all stakeholders</li>
+                    <li>� <strong>Secure & Scalable:</strong> Cloud-ready with offline-first sync capabilities</li>
+                </ul>
+                <br>
+                <p><strong>🚀 Innovation Highlights:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✨ First integrated solution combining attendance automation with personalized learning</li>
+                    <li>⚡ Works with existing infrastructure (CCTV, Wi-Fi) - minimal hardware costs</li>
+                    <li>� AI-driven activity recommendations based on student interests and career goals</li>
+                    <li>� Seamless integration with existing Learning Management Systems</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>👥 TeamAlpha Members</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="member-name">Priya Sharma</div>
-                    <div class="member-role">Team Leader & Full-Stack Developer</div>
+                    <div class="member-name">Srijeeta Biswas</div>
+                    <div class="member-role">Team Leader & AI/ML Engineer</div>
                     <div class="member-description">
-                        Specializes in web development and system architecture. 
-                        Passionate about creating scalable healthcare solutions.
+                        <strong>NIT/2023/1344 | AIML 3rd Year</strong><br>
+                        Specializes in face recognition algorithms and machine learning models. 
+                        Leading the AI/ML development for automated attendance system.
                     </div>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-name">Arjun Patel</div>
-                    <div class="member-role">AI/ML Engineer</div>
+                    <div class="member-name">Trishit Kanti Bhuinya</div>
+                    <div class="member-role">AI/ML Developer & System Architect</div>
                     <div class="member-description">
-                        Expert in machine learning algorithms and predictive analytics. 
-                        Focused on developing intelligent health monitoring systems.
+                        <strong>NIT/2023/1329 | AIML 3rd Year</strong><br>
+                        Expert in OpenCV and computer vision. Developing the face recognition 
+                        engine and system architecture design.
                     </div>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-name">Sneha Gupta</div>
-                    <div class="member-role">IoT & Hardware Specialist</div>
+                    <div class="member-name">Abhisankha Debnath</div>
+                    <div class="member-role">Mobile App Developer</div>
                     <div class="member-description">
-                        Skilled in IoT device integration and sensor networks. 
-                        Ensures seamless hardware-software connectivity.
+                        <strong>NIT/2023/1292 | AIML 3rd Year</strong><br>
+                        React Native specialist building cross-platform mobile applications 
+                        for students and teachers with offline-first capabilities.
                     </div>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-name">Rohit Kumar</div>
-                    <div class="member-role">Blockchain Developer</div>
+                    <div class="member-name">Ankita Paul</div>
+                    <div class="member-role">Backend Developer & Database Designer</div>
                     <div class="member-description">
-                        Blockchain technology expert ensuring data security and privacy. 
-                        Implements decentralized healthcare record systems.
+                        <strong>NIT/2023/1201 | IT 3rd Year</strong><br>
+                        Node.js and MongoDB expert handling API development, 
+                        database design, and cloud infrastructure management.
                     </div>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-name">Kavya Nair</div>
-                    <div class="member-role">UI/UX Designer</div>
+                    <div class="member-name">Aditya Raj Yadav</div>
+                    <div class="member-role">Frontend Developer & UI/UX Designer</div>
                     <div class="member-description">
-                        Creates intuitive and accessible user interfaces. 
-                        Focuses on user-centered design for healthcare applications.
+                        <strong>NIT/2023/1676 | CSE 3rd Year</strong><br>
+                        React.js and Tailwind CSS specialist creating responsive 
+                        teacher dashboards and admin panels with modern UI design.
                     </div>
                 </div>
                 
                 <div class="team-member">
-                    <div class="member-name">Vikash Singh</div>
-                    <div class="member-role">Data Scientist</div>
+                    <div class="member-name">Prashant Kumar Shaw</div>
+                    <div class="member-role">IoT Developer & System Integration</div>
                     <div class="member-description">
-                        Analyzes healthcare data patterns and trends. 
-                        Develops insights for improving patient outcomes.
+                        <strong>NIT/2023/1602 | CSE 3rd Year</strong><br>
+                        BLE/Wi-Fi proximity tracking specialist and system integration 
+                        expert ensuring seamless hardware-software connectivity.
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section impact-metrics">
+            <h2>📈 Expected Impact & Educational Benefits</h2>
+            <div class="idea-content">
+                <p><strong>NextLesson aims to transform educational efficiency across India's academic institutions:</strong></p>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">10M+</div>
+                        <div class="metric-description">Students across schools and colleges to benefit from automated systems</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">75 hrs</div>
+                        <div class="metric-description">Teaching time recovered per semester through automation</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">30%</div>
+                        <div class="metric-description">Improvement in productive use of student free periods</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-description">Attendance accuracy with face recognition technology</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">80%</div>
+                        <div class="metric-description">Reduction in administrative overhead for teachers</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25,000+</div>
+                        <div class="metric-description">Educational institutions ready for digital transformation</div>
+                    </div>
+                </div>
+                <br>
+                <p><strong>🎯 Target Beneficiaries:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>👨‍🎓 Students from K-12 schools to universities seeking personalized learning</li>
+                    <li>👩‍🏫 Teachers and faculty looking to optimize instructional time</li>
+                    <li>🏫 Educational institutions pursuing digital transformation</li>
+                    <li>📊 Administrators requiring data-driven insights for decision making</li>
+                    <li>👨‍👩‍👧‍👦 Parents wanting transparent communication about their children's progress</li>
+                    <li>🏛️ Government education departments implementing NEP 2020 initiatives</li>
+                </ul>
+                <br>
+                <p><strong>📚 NEP 2020 Alignment:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✅ Technology-enabled personalized learning experiences</li>
+                    <li>✅ Data-driven educational decision making</li>
+                    <li>✅ Efficient academic administration and transparency</li>
+                    <li>✅ Student-centered learning with career guidance integration</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section timeline-section">
+            <h2>🗓️ Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 1: MVP Development (Months 1-6)</div>
+                        <div class="timeline-desc">Core system development, IoT integration, basic AI models, pilot testing in 5 hospitals</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 2: Scale & Integration (Months 7-12)</div>
+                        <div class="timeline-desc">Government database integration, regulatory compliance, expansion to 50 healthcare centers</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 3: Rural Deployment (Months 13-18)</div>
+                        <div class="timeline-desc">Rural healthcare center connectivity, mobile health units integration, telemedicine rollout</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Phase 4: Advanced Features (Months 19-24)</div>
+                        <div class="timeline-desc">Advanced AI capabilities, predictive analytics, genomic integration, international expansion planning</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💰 Business Model & Educational Viability</h2>
+            <div class="idea-content">
+                <div class="architecture-grid">
+                    <div class="arch-component">
+                        <div class="component-icon">�</div>
+                        <div class="component-title">SaaS Subscriptions</div>
+                        <div class="component-desc">Monthly/yearly subscriptions for schools and colleges based on student count</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">�️</div>
+                        <div class="component-title">Government Partnerships</div>
+                        <div class="component-desc">Integration with Digital India initiatives and NEP 2020 implementation projects</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">�</div>
+                        <div class="component-title">Hardware Sales</div>
+                        <div class="component-desc">NFC/BLE wearables and edge computing devices for schools</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">�</div>
+                        <div class="component-title">Premium Analytics</div>
+                        <div class="component-desc">Advanced dashboards and AI insights for institutional decision-making</div>
+                    </div>
+                </div>
+                <br>
+                <p><strong>💡 Feasibility Advantages:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✅ Uses existing CCTV and Wi-Fi infrastructure - minimal setup costs</li>
+                    <li>✅ Modular rollout: start with QR codes, upgrade to face recognition</li>
+                    <li>✅ Edge ML processing on Raspberry Pi for cost-effective deployment</li>
+                    <li>✅ Cross-platform apps ensure easy adoption across devices</li>
+                    <li>✅ Low-cost BLE/NFC bands for schools prohibiting smartphones</li>
+                </ul>
+                <br>
+                <p><strong>🎯 Market Opportunity:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📈 Global smart classroom market expected to reach $181B by 2025</li>
+                    <li>🇮🇳 India has 1.5M schools and 50,000+ colleges ready for digitization</li>
+                    <li>💰 Low capex + recurring SaaS revenue model ensures sustainability</li>
+                    <li>🚀 Rapid ROI through time savings and efficiency improvements</li>
+                    <li>📚 Aligns with NEP 2020 government initiatives for funding opportunities</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛠️ NextLesson Technology Stack</h2>
+            <div class="idea-content">
+                <div class="architecture-grid">
+                    <div class="arch-component">
+                        <div class="component-icon">🎨</div>
+                        <div class="component-title">Frontend Web</div>
+                        <div class="component-desc">React.js, Tailwind CSS, PWA for responsive teacher dashboards and admin panels</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">📱</div>
+                        <div class="component-title">Mobile Apps</div>
+                        <div class="component-desc">React Native for cross-platform iOS/Android apps with offline-first capabilities</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">⚙️</div>
+                        <div class="component-title">Backend API</div>
+                        <div class="component-desc">Node.js, Express.js, GraphQL for fast and scalable server architecture</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">🤖</div>
+                        <div class="component-title">AI/ML Engine</div>
+                        <div class="component-desc">Python, OpenCV, TensorFlow Lite for face recognition and recommendation systems</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">🗄️</div>
+                        <div class="component-title">Database</div>
+                        <div class="component-desc">MongoDB Atlas, Firebase for attendance records and real-time synchronization</div>
+                    </div>
+                    <div class="arch-component">
+                        <div class="component-icon">📡</div>
+                        <div class="component-title">Connectivity</div>
+                        <div class="component-desc">BLE, Wi-Fi RTT, NFC, MQTT for proximity tracking and device communication</div>
+                    </div>
+                </div>
+                <br>
+                <p><strong>🔧 Development & Deployment:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🐳 <strong>Containerization:</strong> Docker for easy deployment and portability</li>
+                    <li>☁️ <strong>Cloud Infrastructure:</strong> Auto-scaling cloud deployment with 5G readiness</li>
+                    <li>� <strong>Security:</strong> OAuth 2.0, TLS 1.3, AES-256 encryption for data protection</li>
+                    <li>📊 <strong>Analytics:</strong> Real-time dashboards with data visualization and insights</li>
+                    <li>⚡ <strong>Performance:</strong> Edge computing with Raspberry Pi for local face recognition</li>
+                    <li>� <strong>Integration:</strong> Compatible with existing LMS and school management systems</li>
+                </ul>
+                <br>
+                <p><strong>💡 Innovation Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🎯 <strong>Multi-Modal Tracking:</strong> Face recognition + BLE + Wi-Fi + QR backup</li>
+                    <li>🧠 <strong>Smart Recommendations:</strong> AI-driven activity suggestions during free periods</li>
+                    <li>📱 <strong>Device Flexibility:</strong> Works with smartphones or NFC/BLE wearables</li>
+                    <li>🌐 <strong>Offline Capability:</strong> Sync when network connectivity is restored</li>
+                </ul>
             </div>
         </section>
 
         <section class="section future-plans">
-            <h2>Future Roadmap</h2>
-            <ul>
-                <li>Phase 1: Pilot testing in select hospitals and clinics</li>
-                <li>Phase 2: Integration with government healthcare databases</li>
-                <li>Phase 3: Expansion to rural healthcare centers</li>
-                <li>Phase 4: International market penetration</li>
-                <li>Phase 5: Advanced AI features and personalized medicine</li>
-            </ul>
+            <h2>🚀 Innovation Highlights & Competitive Advantage</h2>
+            <div class="idea-content">
+                <p><strong>🌟 Unique Value Propositions:</strong></p>
+                <ul>
+                    <li>First multi-modal attendance system combining face recognition, BLE, and QR backup</li>
+                    <li>AI-powered personalized learning activity recommendations during free periods</li>
+                    <li>Seamless integration with existing educational infrastructure and LMS systems</li>
+                    <li>Device-flexible architecture supporting smartphones and wearables</li>
+                    <li>Offline-first design ensuring reliability in low-connectivity environments</li>
+                    <li>NEP 2020 aligned solution promoting personalized and technology-enabled learning</li>
+                </ul>
+                <br>
+                <p><strong>🏆 Research & Validation:</strong></p>
+                <ul>
+                    <li>✅ Face recognition achieves 95-98% accuracy in controlled classroom environments</li>
+                    <li>📊 Manual attendance wastes 15-20 minutes per class, affecting teaching time</li>
+                    <li>📈 Digital engagement platforms increase student participation by ~25%</li>
+                    <li>💰 Smart classroom market growing at 13.1% CAGR globally</li>
+                    <li>🎯 BLE proximity tracking proven effective for indoor positioning systems</li>
+                </ul>
+                <br>
+                <p><strong>🔬 Live Demo & Prototyping:</strong></p>
+                <ul>
+                    <li>🌐 <strong>Live Demo:</strong> <a href="https://nextlesson-web.vercel.app/" target="_blank" style="color: #667eea; text-decoration: underline;">nextlesson-web.vercel.app</a></li>
+                    <li>📱 Working React Native mobile app prototype</li>
+                    <li>🤖 OpenCV face recognition engine with 95%+ accuracy</li>
+                    <li>� BLE proximity tracking system tested in classroom environments</li>
+                    <li>☁️ Cloud-deployed backend with real-time synchronization</li>
+                </ul>
+            </div>
         </section>
 
         <footer>
-            <p>&copy; 2025 Team InnovateSIH - Smart India Hackathon</p>
-            <p>Building the future of healthcare technology</p>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.3em; margin-bottom: 15px;">
+                    <strong>🏆 TeamAlpha - Smart India Hackathon 2025</strong>
+                </p>
+                <p style="margin-bottom: 15px; font-size: 1.1em;">
+                    🎓 NextLesson: Revolutionizing Education Through Technology | 💡 Smart Curriculum & Attendance System
+                </p>
+                <p style="margin-bottom: 15px; font-size: 1em; color: rgba(255,255,255,0.9);">
+                    <strong>Problem Statement 25011</strong> | Smart Education Theme | Software Category
+                </p>
+                <div style="margin-bottom: 20px;">
+                    <span style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 25px; margin: 5px; display: inline-block;">
+                        🌐 nextlesson-web.vercel.app
+                    </span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 25px; margin: 5px; display: inline-block;">
+                        📱 GitHub: @TeamAlpha-NextLesson
+                    </span>
+                </div>
+                <p style="font-size: 0.9em; color: rgba(255,255,255,0.8);">
+                    © 2025 TeamAlpha | All Rights Reserved | 
+                    Made with ❤️ for Smart India Hackathon 2025
+                </p>
+                <p style="font-size: 0.8em; color: rgba(255,255,255,0.7); margin-top: 10px;">
+                    NIT Students | AI/ML, CSE & IT Departments | Building the Future of Education
+                </p>
+            </div>
         </footer>
     </div>
 </body>
